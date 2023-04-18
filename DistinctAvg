@@ -1,0 +1,14 @@
+class DistinctAvg {
+   public int distinctAverages(int[] nums) {
+        Arrays.sort(nums);
+        int numLength = nums.length;
+        int last=numLength-1;
+        int middle = numLength/2;
+        Set<Double> set = new HashSet<>();
+        for(int i = 0; i<middle; i++)
+        {
+           set.add(((nums[i] + nums[last-i]))/2.0); 
+        }
+        return set.size();
+    }
+}
