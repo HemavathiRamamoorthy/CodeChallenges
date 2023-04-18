@@ -1,0 +1,15 @@
+class MergeAlternately {
+    public String mergeAlternately(String word1, String word2) {
+	        StringBuilder mergedString = new StringBuilder();
+	        int minLength=Math.min(word1.length(), word2.length()) ;   
+	        		for(int i=0;i<minLength;i++)
+	        {
+		            mergedString.append(word1.charAt(i));
+		            mergedString.append(word2.charAt(i));
+	        }
+	        
+	        mergedString.append(word1.substring(minLength));
+	        mergedString.append(word2.substring(minLength));
+	        return mergedString.toString();
+	   }
+}
