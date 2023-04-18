@@ -11,4 +11,19 @@ class IndexOfSumForGivenTarget {
 	        }
 	        return new int[] {-1, -1};
 	    }
+	    /** Alternatively different approach using ArrayList **/
+	     public int[] twoSum1(int[] nums, int target) {
+		 List<Integer> list = IntStream.of(nums).boxed().collect(Collectors.toCollection(ArrayList::new));
+
+	        int numLength=list.size();
+	        for (int i = 0; i <numLength ; i++) {
+	        	
+	            int complement = target - nums[i];
+	            if (list.contains(complement)) {
+	                return new int[] { i , list.indexOf(complement)};
+	            }
+	        }
+	        return new int[] {-1, -1};
+	    }
+	 
 }
